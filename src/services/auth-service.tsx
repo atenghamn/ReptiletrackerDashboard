@@ -2,19 +2,26 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const login = (username: string, password: string) => {
-    return axios
-    .post(API_URL + "login", {
-        'username': username,
-        'password': password
-    })
-    .then(response => {
-        if (response.data) {
-            localStorage.setItem("user", JSON.stringify(response.data.access_token));
-        }
+const register = async (username: string, password: string ) => {
+    const response = await axios
+        .post(API_URL + "register", {
+            'username': username,
+            'password': password
+        });
+    return response.data;
+    
+}
 
-        return response.data;
-    })
+const login = async (username: string, password: string) => {
+    const response = await axios
+        .post(API_URL + "login", {
+            'username': username,
+            'password': password
+        });
+    if (response.data) {
+        localStorage.setItem("user", JSON.stringify(response.data.accessToken));
+    }
+    return response.data;
 }
 
 const logout = () => {
@@ -22,6 +29,7 @@ const logout = () => {
 }
 
 const AuthService = {
+    register,
     login,
     logout
 }

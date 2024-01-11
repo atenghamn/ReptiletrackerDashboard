@@ -1,5 +1,6 @@
 import { Paper, Box, Typography } from "@mui/material";
 import React from "react";
+import Login from "../components/login";
 
 const StartPage = () => {
 
@@ -9,6 +10,7 @@ const StartPage = () => {
                 <Typography variant="h1" gutterBottom>
                     ReptileTracker
                 </Typography>
+                <Login />
             </Box>
         </Paper>
     );

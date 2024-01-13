@@ -22,38 +22,17 @@ const Login = () => {
 
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [backdrop, setBackrop] = useState<boolean>(false);
-
-    const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUsername(e.target.value);
-    }
-
-    const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
-    }
-
-    const handleCloseBackdrop = () => {
-        setBackrop(false);
-    }
-
-    const handleOpenBackdrop = () => {
-        setBackrop(true);
-    }
 
     const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        handleOpenBackdrop();
+
         const data = new FormData(event.currentTarget);
-        // ONLY FOR TESTING!!!!!!!!!1
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-          });
-        // ---------------------------------------------
+        setUsername(data.get('email') as string);
+        setPassword(data.get('password') as string);
+    
         AuthService.login(username, password,).then( () => {
             window.location.reload();
         })
-        handleCloseBackdrop();
     }
 
     function Copyright(props: any) {

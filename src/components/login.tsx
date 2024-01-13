@@ -20,17 +20,13 @@ const defaultTheme = createTheme();
 
 const Login = () => {
 
-    const [username, setUsername] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
     const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const data = new FormData(event.currentTarget);
-        setUsername(data.get('email') as string);
-        setPassword(data.get('password') as string);
+  
     
-        AuthService.login(username, password,).then( () => {
+        AuthService.login(data.get('email') as string, data.get('password') as string,).then( () => {
             window.location.reload();
         })
     }

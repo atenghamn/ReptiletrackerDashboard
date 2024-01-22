@@ -2,7 +2,7 @@ import { Paper, Box, Typography, Grid } from "@mui/material";
 import React from "react";
 import Login from "../components/login";
 
-const StartPage = () => {
+const LoginPage = () => {
 
     return (
         <Grid container
@@ -25,4 +25,4 @@ const StartPage = () => {
     );
 }
 
-export default StartPage;
+export default LoginPage;

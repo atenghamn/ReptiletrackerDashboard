@@ -13,22 +13,29 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { Navigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 
 const Login = () => {
 
+
+    const [authenticated, setAuthenticated] = useState<boolean>(
+        localStorage.getItem(localStorage.getItem("authenticated") || 'false') === 'true'
+      );
+
     const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const data = new FormData(event.currentTarget);
-  
-    
-        AuthService.login(data.get('email') as string, data.get('password') as string,).then( () => {
-            window.location.reload();
-        })
+        const data = new FormData(event.currentTarget);  
+       const response = AuthService.login(data.get('email') as string, data.get('password') as string,);
+       if (response !== null) {
+        localStorage.setItem("authenticated", "true");
+        setAuthenticated(true);
+        window.location.reload();
+        return <Navigate replace to="/dashboard" />;
+    } 
     }
 
     function Copyright(props: any) {

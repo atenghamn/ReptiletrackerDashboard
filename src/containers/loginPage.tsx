@@ -1,7 +1,7 @@
 import { Paper, Box, Typography } from "@mui/material";
 import React from "react";
 
-const StartPage = () => {
+const LoginPage = () => {
 
     return (
         <Paper>
@@ -14,4 +14,4 @@ const StartPage = () => {
     );
 }
 
-export default StartPage;
+export default LoginPage;

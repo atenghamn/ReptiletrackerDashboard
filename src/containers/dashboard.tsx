@@ -1,4 +1,5 @@
 import { Paper, Box, Typography } from "@mui/material";
+import Logout from "../components/logout";
 
 const Dashboard = () => {
         return (
@@ -7,6 +8,7 @@ const Dashboard = () => {
                     <Typography variant="h1" gutterBottom>
                         Dashboard
                     </Typography>
+                    <Logout />
                 </Box>
             </Paper>
         );

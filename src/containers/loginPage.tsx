@@ -1,16 +1,27 @@
-import { Paper, Box, Typography } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import React from "react";
+import Login from "../components/login";
 
 const LoginPage = () => {
 
     return (
-        <Paper>
-            <Box sx={{ width: '100%', maxWidth: 500 }}>
-                <Typography variant="h1" gutterBottom>
-                    ReptileTracker
-                </Typography>
-            </Box>
-        </Paper>
+        <Grid container
+                justifyContent="center"
+                spacing={3}
+                direction="column"
+                alignItems="stretch"
+                >
+                    <Grid item
+                    xs={6} lg
+                     marginTop={5}>
+                        <Typography variant="h2" gutterBottom>
+                            REPTILE TRACKER
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Login />
+                    </Grid>
+        </Grid>
     );
 }
 

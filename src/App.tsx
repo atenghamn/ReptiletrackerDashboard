@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import StartPage from './containers/loginPage';
 import LoginPage from './containers/loginPage';
+import Dashboard from './containers/dashboard';
 
 function App() {
   return (

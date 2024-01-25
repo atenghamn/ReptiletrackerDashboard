@@ -13,14 +13,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 
 const Login = () => {
 
-
+    const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState<boolean>(
         localStorage.getItem(localStorage.getItem("authenticated") || 'false') === 'true'
       );
@@ -33,8 +33,7 @@ const Login = () => {
        if (response !== null) {
         localStorage.setItem("authenticated", "true");
         setAuthenticated(true);
-        window.location.reload();
-        return <Navigate replace to="/dashboard" />;
+        navigate("/dashboard");
     } 
     }
 

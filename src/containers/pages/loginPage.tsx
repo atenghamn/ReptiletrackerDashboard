@@ -1,6 +1,6 @@
 import { Typography, Grid } from "@mui/material";
 import React from "react";
-import Login from "../components/login";
+import Login from "../../components/auth/login";
 
 const LoginPage = () => {
 

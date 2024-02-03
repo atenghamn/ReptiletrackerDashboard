@@ -1,6 +1,6 @@
 
 import { Button } from "@mui/material";
-import AuthService from "../services/auth-service";
+import AuthService from "../../services/auth-service";
 import { useNavigate } from "react-router-dom";
 
 

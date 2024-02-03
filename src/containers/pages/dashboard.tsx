@@ -1,5 +1,5 @@
 import { Paper, Box, Typography } from "@mui/material";
-import Logout from "../components/logout";
+import Logout from "../../components/auth/logout";
 
 const Dashboard = () => {
         return (

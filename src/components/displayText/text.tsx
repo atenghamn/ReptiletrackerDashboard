@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material"
+import { DisplayText } from "./displayText";
 
 const Text = (props: DisplayText) => {
 

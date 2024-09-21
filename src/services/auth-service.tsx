@@ -1,4 +1,5 @@
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -28,10 +29,25 @@ const logout = () => {
     localStorage.removeItem("user");
 }
 
+  
+const getUserId = () => {
+    const token = localStorage.getItem("user");
+    if (token) {
+        try {
+            const decodedToken = jwtDecode(token);
+            return decodedToken.sub;
+        } catch (error) {
+            return false;
+        }
+    }
+    return false;
+}
+
 const AuthService = {
     register,
     login,
-    logout
+    logout,
+    getUserId
 }
 
 export default AuthService;

@@ -1,6 +1,6 @@
-import { Typography, Grid } from "@mui/material";
-import React from "react";
-import Login from "../components/login";
+import { Grid } from "@mui/material";
+import Login from "../../components/auth/login";
+import Text from "../../components/displayText/text";
 
 const LoginPage = () => {
 
@@ -14,9 +14,7 @@ const LoginPage = () => {
                     <Grid item
                     xs={6} lg
                      marginTop={5}>
-                        <Typography variant="h2" gutterBottom>
-                            REPTILE TRACKER
-                        </Typography>
+                        <Text text="Reptile Tracker" variant="h1" />
                     </Grid>
                     <Grid item>
                         <Login />

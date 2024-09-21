@@ -1,5 +1,5 @@
 import React from "react";
-import AuthService from "../services/auth-service";
+import AuthService from "../../services/auth-service";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
